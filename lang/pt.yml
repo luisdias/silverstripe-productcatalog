@@ -1,0 +1,20 @@
+pt:
+  Product:
+    INTERNALITEMID:   'Número de controlo'    
+    TITLE:            'Nome'
+    CATEGORY :        'Categoria'
+    URLSEGMENT:       'URL'
+    MODEL:            'Modelo'
+    MANUFACTURER:     'Fabricante'
+    PRICE:            'Preço'
+    DESCRIPTION:      'Descrição'
+    SORTORDER:        'Ordem'
+    FEATUREDPRODUCT:  'Produto em destaque'
+    HIDDEN:           'Escondido'
+    PHOTO:            'Foto'
+    ADDITIONALPHOTOS: 'Fotos adicionais'
+    NOIMAGE:          '(Sem Imagem)'
+    THUMBNAIL:        'Miniatura'
+  Category:
+    TITLE:            'Nome'
+      
