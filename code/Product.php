@@ -116,9 +116,17 @@ class Product extends DataObject {
     {
         if($this->PhotoID)
             return $this->Photo()->CMSThumbnail();
-        else   
-            return _t('Product.NOIMAGE','(No Image)');
+        else  
+            return '<img src="productcatalog/images/no-image-available-th.png" width="100" height="100" />';
     }
+
+    public function getPhoto()
+    {
+        if($this->PhotoID)
+            return $this->Photo()->setWidth(300)->setHeight(300);
+        else  
+            return '<img src="productcatalog/images/no-image-available-th.png" width="300" height="300" />';
+    }    
     
     //Add an SQL index for the URLSegment
     static $indexes = array(
