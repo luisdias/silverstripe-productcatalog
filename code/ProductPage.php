@@ -70,7 +70,7 @@ class ProductPage_Controller extends Page_Controller
     }
     
     public function Categories() {
-        $categories = Category::get()->sort('Title');
+        $categories = Category::get()->sort('SortOrder');
         return $categories;
     }
 
