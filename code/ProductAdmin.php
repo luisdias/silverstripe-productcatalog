@@ -23,13 +23,13 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-class ProductAdmin extends ModelAdmin {
+class ProductCatalogAdmin extends ModelAdmin {
     private static $managed_models = array('Product','Category'); 
     private static $url_segment = 'products'; 
     private $menu_title = 'Product Admin';    
 }
 
-class ProductAdmin_Controller extends ContentController implements PermissionProvider { 
+class ProductCatalogAdmin_Controller extends ContentController implements PermissionProvider { 
    function providePermissions(){ 
       return array( 
          "CMS_ACCESS_CMSMain" => "Create/edit/delete 'Products'", 
