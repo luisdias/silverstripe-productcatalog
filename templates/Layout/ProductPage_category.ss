@@ -7,7 +7,7 @@ $Content
     <ul class="pc-box pc-products">
         <% loop Products  %>
             <li>
-                <a href="$Top.Link$Link">$getThumbnail</a><br/>
+                <a href="$Top.Link$Link">$getThumbnailForTemplate</a><br/>
                 <a href="$Top.Link$Link">$Title</a>
             </li>
         <% end_loop %>
