@@ -34,15 +34,20 @@ class ProductPage extends Page
  
 class ProductPage_Controller extends Page_Controller
 {
+    
     //Allow our 'show' and 'category' functions as a URL actions
     private static $allowed_actions = array(
         'show','category'
     );
     
+    public function init() {
+        parent::init();
+        Requirements::css('productcatalog/css/productcatalog.css');
+    }    
+    
     // show one product 
-    function show() {       
+    public function show() {       
         $params = $this->getURLParams();
-        
         if(is_numeric($params['ID']) && 
             $product = Product::get()->byID((int)$params['ID'])) {
             $data = array(
@@ -53,7 +58,7 @@ class ProductPage_Controller extends Page_Controller
     }
 
     // show all products of one category
-    function category() {       
+    public function category() {       
         $params = $this->getURLParams();
         if(is_numeric($params['ID']) &&  
             $products = Product::get()->filter(array('CategoryID'=>(int)$params['ID'],'Hidden'=>false))) {
