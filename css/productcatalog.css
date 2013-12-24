@@ -6,7 +6,50 @@
         Purpose of the stylesheet follows.
 */
 
-root { 
-    display: block;
+.pc-box {
+    border: 1px solid black; /* width style color */
+    padding: 20px;
 }
 
+ul.pc-box li {
+    display: inline-block; 
+    margin-right: 10px;
+    text-align: center;
+}
+
+ul.pc-box li a {
+    font-size: 10pt;
+}
+
+ul.pc-box li a br {
+    text-decoration: none;
+}
+
+.pc-products ul {
+    display: block;    
+}
+
+.pc-first-column {
+    float: left;
+    clear: none;
+    width: 10%;
+}
+.pc-second-column {
+    margin-left: 20px;
+    float: left;
+    clear: none;    
+    width: auto;
+}
+
+.pc-product {
+    float: left;
+}
+
+.pc-product-photo {
+    float:left;
+    margin-right: 20px;
+}
+
+.pc-product-show {
+    float: left;
+}
