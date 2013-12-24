@@ -25,7 +25,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 class Category extends DataObject {
     private static $db = array (
-        'Title' => 'Varchar'
+        'Title' => 'Varchar',
+        'SortOrder' => 'Int'
     );
     
     private static $has_many = array ( 
@@ -33,13 +34,14 @@ class Category extends DataObject {
     );
     
     private static $summary_fields = array( 
-        'Title' => 'Title'
-        
+        'Title' => 'Title',
+        'SortOrder' => 'Sort Order'
     );
     
     public function fieldLabels($includerelations = true) {
        $labels = parent::fieldLabels($includerelations);
        $labels['Title'] = _t('Category.TITLE','Title');
+       $labels['SortOrder'] = _t('Product.SORTORDER','Sort Order');
        return $labels;
      }    
 
