@@ -111,14 +111,24 @@ class Product extends DataObject {
         
         return $fields;
     }
-    
-    public function getThumbnail()
+
+    public function getThumbnailForTemplate()
     {
         if($this->PhotoID)
             return $this->Photo()->CMSThumbnail();
         else  
             return '<img src="productcatalog/images/no-image-available-th.png" width="100" height="100" />';
+    }    
+    
+    public function getThumbnail()
+    {
+        if($this->PhotoID)
+            return $this->Photo()->CMSThumbnail();
+        else
+            return _t('Product.NOIMAGE','(No Image)');
     }
+    
+    
 
     public function getPhoto()
     {
