@@ -131,7 +131,7 @@ class Product extends DataObject {
     
     //Return the link to view this category
     public function Link() {
-        $Action = 'show/' . $this->ID;
+        $Action = 'show/' . $this->ID . '/' . $this->CategoryID;
         return $Action;    
     }       
     
