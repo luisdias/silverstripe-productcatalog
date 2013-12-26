@@ -69,5 +69,15 @@ class Category extends DataObject {
     
     public function getCMSValidator() { 
       return new RequiredFields('Title'); 
+    }
+    
+    public function LinkingMode(){
+        $params = Controller::curr()->getURLParams();
+        if ( is_numeric($params['OtherID'] )) {
+            $categoryID = (int)$params['OtherID'];
+        } else {
+            $categoryID = (int)$params['ID'];
+        }
+        return ($this->ID == $categoryID) ? 'pc-current' : 'link';
     }    
 }
