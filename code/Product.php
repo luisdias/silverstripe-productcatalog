@@ -40,11 +40,7 @@ class Product extends DataObject {
     private static $has_one = array ( 
         'Category' => 'Category',        
         'Photo' => 'Image'
-    );
-    
-    private static $has_many = array(
-        'AdditionalPhotos' => 'Image'
-    );    
+    );        
 
     private static $summary_fields = array(
         'Thumbnail' => 'Thumbnail',
@@ -88,13 +84,7 @@ class Product extends DataObject {
         $fields->replaceField('Price', $price);
         $fields->replaceField('Photo', $photo);
         $fields->removeByName('CategoryID');
-        $fields->insertAfter($category,'InternalItemId');       
-        
-        $fields->addFieldToTab(
-                'Root.AdditionalPhotos', 
-                UploadField::create('AdditionalPhotos','AdditionalPhotos')->setFolderName('Products')
-                );        
-        
+        $fields->insertAfter($category,'InternalItemId');
         $fields->renameField('InternalItemId',_t('Product.INTERNALITEMID','Internal Item Id'));
         $fields->renameField('Title',_t('Product.TITLE','Title'));
         $fields->renameField('CategoryID',_t('Product.CATEGORY','Category'));
@@ -107,8 +97,6 @@ class Product extends DataObject {
         $fields->renameField('FeaturedProduct',_t('Product.FEATUREDPRODUCT','Featured Product'));
         $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden'));
         $fields->renameField('Photo',_t('Product.PHOTO','Photo'));
-        $fields->renameField('AdditionalPhotos',_t('Product.ADDITIONALPHOTOS','Additional Photos'));
-        
         return $fields;
     }
 
@@ -128,9 +116,7 @@ class Product extends DataObject {
             return _t('Product.NOIMAGE','(No Image)');
     }
     
-    
-
-    public function getPhoto()
+    public function getPhotoForTemplate()
     {
         if($this->PhotoID)
             return $this->Photo()->setWidth(300)->setHeight(300);
