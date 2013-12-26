@@ -7,7 +7,7 @@ $Content
     <div class="pc-box pc-product">
         <% loop Product %>
             <div class="pc-product-photo">
-                $getPhoto
+                $getPhotoForTemplate
             </div>
             <div class="pc-product-show">
                 <h2><%t Product.TITLE "Title" %> : $Title</h2>
